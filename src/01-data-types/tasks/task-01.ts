@@ -14,3 +14,28 @@
  * 3. Create the variable declarations using TypeScript.
  * 4. Display the student data using console.log.
  */
+
+const name : String = `Nadia Putri`
+const StudentId : String = `ST2026045`
+type StudentScore = {
+    assignment : number
+    midTerm: number
+    finalExam: number
+    attendance: number
+}
+
+const nadiaScore : StudentScore = {
+    assignment : 88.5,
+    midTerm : 84,
+    finalExam: 91.5,
+    attendance: 100
+}
+
+const extracurricularActivity : String = `Scout`
+console.log(`name: ${name}`)
+console.log(`ID: ${StudentId}`)
+console.log(`Extrxcurricular: ${extracurricularActivity }`)
+console.log(`Assingment Score: ${nadiaScore.assignment}`)
+console.log(`Mid term Score: ${nadiaScore.midTerm}`)
+console.log(`Final exam Score: ${nadiaScore.finalExam}`)
+console.log(`Attendance Score: ${nadiaScore.attendance}`)

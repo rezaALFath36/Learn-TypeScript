@@ -16,3 +16,18 @@
  * 2. Store the product data in a single collection.
  * 3. Display the product data using console.log.
  */
+
+let productDetail : {productCode : String,  productName : String, price: Number, quantity : Number, freeShipping : Boolean}[] = [
+    {productCode : `KB001`, productName : `Mechanical Keyboard`, price : 850000, quantity : 1, freeShipping: true},
+    {productCode : `MS002`, productName : `Wireless Mouse`, price : 275000, quantity : 2, freeShipping: true},
+    {productCode : `HD003`, productName : `External SSD 1TB`, price : 1650000, quantity : 1, freeShipping: false},
+    {productCode : `HP004`, productName : `Gaming Headset`, price : 720000, quantity : 1, freeShipping: true},
+   
+]
+
+console.log(`| Product Code | Product Name        | Price   | Quantity | Free Shipping |
+`)
+console.log(productDetail[0].productCode, productDetail[0].productName, productDetail[0].price, productDetail[0].quantity, productDetail[0].freeShipping)
+console.log(productDetail[1].productCode, productDetail[1].productName, productDetail[1].price, productDetail[1].quantity, productDetail[1].freeShipping)
+console.log(productDetail[2].productCode, productDetail[2].productName, productDetail[2].price, productDetail[2].quantity, productDetail[2].freeShipping)
+console.log(productDetail[3].productCode, productDetail[3].productName, productDetail[3].price, productDetail[0].quantity, productDetail[3].freeShipping)

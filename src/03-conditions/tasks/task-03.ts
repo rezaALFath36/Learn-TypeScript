@@ -18,3 +18,23 @@
  * 2. Implement the business rules using if...else if...else.
  * 3. Display the recommended package.
  */
+
+type CustomerInformation = {
+    customerName : string
+    monthlyUsage : number
+}
+
+const customer1 : CustomerInformation = {
+    customerName : `Raka Saputra`,
+    monthlyUsage : 124
+}
+
+if(customer1.monthlyUsage > 150){
+    console.log(`Recommended package : Premium`)
+}
+else if(customer1.monthlyUsage >= 50){
+    console.log(`Recommended package : Standart`)
+}
+else{
+    console.log(`Recommended package : Basic`)
+}

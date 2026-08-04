@@ -50,6 +50,8 @@ let employee3 : attendanceRecord = {
     isPresent : false
 }
 
+
+
 console.log(`========== REGISTRATION RECORDS ==========`)
 console.log(`----- FIRST EMPLOYEE -----`)
 console.log(`ID : ${employee1.employeeId}`)

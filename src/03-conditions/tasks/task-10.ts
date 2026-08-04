@@ -45,3 +45,54 @@ Student Tasks
 - Use nested conditional statements.
 - Display the final registration result.
  */
+
+type StudentInform = {
+    studentName : string
+    isActiveStudent : boolean
+    isTuitionPaid : boolean
+    passedProgrammingFundamentals : boolean
+    passedDatabaseSystem : boolean
+    GPA : number
+    isSeatsAvailable : boolean
+}
+
+let student1 : StudentInform = {
+    studentName : `Nadia Putri`,
+    isActiveStudent : true,
+    isTuitionPaid : true,
+    passedProgrammingFundamentals : true,
+    passedDatabaseSystem : true,
+    GPA : 3.45,
+    isSeatsAvailable : false
+}
+
+let message : string;
+
+if(student1.isActiveStudent && student1.isTuitionPaid){
+    if(student1.passedProgrammingFundamentals &&
+        student1.passedDatabaseSystem &&
+        student1.GPA >= 3.20){
+
+        if(!student1.isSeatsAvailable){
+            message = `Registration Successful`
+        }
+        else{
+            message = `Added to Waiting List`
+        }
+    }
+    else{
+        message = `Academic Requirements Not Met`
+    }
+}
+else{
+    message = `Registration Rejected`
+}
+
+console.log(`Student Name : ${student1.studentName} `)
+console.log(`Active Student : ${student1.isActiveStudent}`)
+console.log(`Tuition Paid : ${student1.isTuitionPaid}`)
+console.log(`Passed Programming Fundamentals : ${student1.passedProgrammingFundamentals}`)
+console.log(`Passed Database System : ${student1.passedDatabaseSystem}`)
+console.log(`GPA : ${student1.GPA}`)
+console.log(`Seats Available : ${student1.isSeatsAvailable}`)
+console.log(`Message : ${message}`)

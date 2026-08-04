@@ -24,3 +24,38 @@
  * - Final bill
  * - Green Energy Program eligibility
  */
+
+type monitorInformation = {
+    previousMeter : number
+    currentMeter : number
+    electricitypricePerKwh : number
+    isSolarPanelInstalled : boolean
+    energySavingModeEnabled : boolean
+}
+
+let monitor1 : monitorInformation = {
+    previousMeter : 25640,
+    currentMeter : 25892,
+    electricitypricePerKwh : 1650,
+    isSolarPanelInstalled : true,
+    energySavingModeEnabled : false
+}
+
+let electricUsage : number = monitor1.currentMeter - monitor1.previousMeter;
+let electricBill : number = electricUsage * monitor1.electricitypricePerKwh;
+
+let isQualifies : boolean =
+monitor1.isSolarPanelInstalled &&
+electricUsage <= 300 &&
+monitor1.energySavingModeEnabled;
+
+let solarPanelDiscount : number = monitor1.isSolarPanelInstalled ? 0.2 : 0;
+let additionalDiscount : number = monitor1.energySavingModeEnabled === true ? 0.05 : 0;
+let totalDiscount : number = solarPanelDiscount + additionalDiscount;
+
+let finalBill : number = electricBill * (1 - totalDiscount);
+
+console.log(`Total Energy Consumption : ${electricUsage}`);
+console.log(`Electricity Bill : ${electricBill}`);
+console.log(`Final Bill : ${finalBill}`);
+console.log(`Is Eligible Green Energy Program ? : ${isQualifies}`);

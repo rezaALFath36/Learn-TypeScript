@@ -23,3 +23,33 @@
  * 2. Implement the hospital workflow using conditional statements.
  * 3. Display the patient's destination.
  */
+
+type PatientInformation = {
+    patientName : string
+    isCriticalCondition : boolean
+    hasAppointment : boolean
+    age : number
+    hasInsurance : boolean
+}
+
+const patient1 : PatientInformation = {
+    patientName : `Siti Rahma`,
+    isCriticalCondition : false,
+    hasAppointment : true,
+    age : 67,
+    hasInsurance : true
+}
+
+ let destination : string; 
+if(patient1.isCriticalCondition){
+    destination = `Emergency Room`
+}
+else if (patient1.hasAppointment){
+    destination = patient1.age >= 60 ? `priority queue` : `regular queue`
+}
+else{
+    destination = patient1.hasInsurance? `Insurance Registration Counter` : `General Registration Counter`
+}
+
+console.log(`Patient Name : ${patient1.patientName}`);
+console.log(`Destination  : ${destination}`);

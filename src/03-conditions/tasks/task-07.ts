@@ -30,3 +30,37 @@
  * 2. Implement both screening stages.
  * 3. Display the loan decision.
  */
+
+type applicantInfor = {
+    applicant : string
+    monthlyIncome : number
+    creditScore : number
+    existingDebt : number
+    isPermanentEmployee : boolean
+}
+
+const applicant1 : applicantInfor = {
+    applicant : `Andi Wijaya`,
+    monthlyIncome : 10000000,
+    creditScore : 725,
+    existingDebt : 2500000,
+    isPermanentEmployee : true
+}
+
+let loanDecision : string;
+
+if(applicant1.monthlyIncome >= 8000000 && applicant1.creditScore >= 700){
+    
+    if(applicant1.existingDebt <= applicant1.monthlyIncome * 0.3){
+        loanDecision = `Loan Approved`
+    }
+    else {
+        loanDecision = `Manual Review`
+    }
+}
+else{
+    loanDecision = `Loan Rejected`
+}
+
+console.log(`Name : ${applicant1.applicant}`)
+console.log(`Loan Decision : ${loanDecision}`)

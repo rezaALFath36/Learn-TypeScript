@@ -14,3 +14,31 @@
  *  - Final payment
  * 2. Display the calculation results.
  */
+
+type product = {
+    name : String
+    price : number
+    quantity : number
+}
+
+let product1 : product = {
+    name : `Fried Rice`,
+    price : 18000,
+    quantity : 3
+}
+let product2 : product = {
+    name : `Mineral Water`,
+    price : 5000,
+    quantity : 2
+}
+
+const discount : number = 10000;
+const totalFoodPrice : number = product1.price * product1.quantity;
+const totalDrinkPrice : number = product2.price * product2.quantity;
+const grandTotal : number = totalFoodPrice + totalDrinkPrice;
+const finalPayment : number = grandTotal - discount;
+
+console.log(`Total Food Price (Fried Rice) : Rp${totalFoodPrice}`);
+console.log(`Total Drink Price (Mineral Water) : Rp${totalDrinkPrice}`);
+console.log(`Total Before Discount          : Rp${grandTotal}`);
+console.log(`Final Payment                  : Rp${finalPayment}`);

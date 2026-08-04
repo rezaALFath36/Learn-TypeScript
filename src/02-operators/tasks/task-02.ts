@@ -14,3 +14,27 @@
  * Task: Store and display the result in a variable named "isEligible"
 
  */
+
+type studentInformation = {
+    finalScore : number
+    attendance : number
+    isTuitionPay : boolean
+}
+
+const student : studentInformation = {
+    finalScore : 82,
+    attendance : 94,
+    isTuitionPay : true
+}
+
+const isEligible: boolean = 
+    student.finalScore >= 75 && 
+    student.attendance >= 90 && 
+    student.isTuitionPay;
+
+console.log(`Final Score  : ${student.finalScore}`);
+console.log(`Attendance   : ${student.attendance}%`);
+console.log(`Tuition Paid : ${student.isTuitionPay ? "Yes" : "No"}`);
+console.log(`Is Student Eligible for Graduation? ${isEligible}`);
+
+

@@ -33,3 +33,43 @@
  * - Calculate the remaining scholarship budget.
  * - Display whether the student is accepted.
  */
+
+type information = {
+    name : string
+    GPA : number
+    familyIncome : number
+    competitionCount : number
+    hasDisciplinaryRecord : boolean
+    isDocumentComplete : boolean
+}
+
+let student : information = {
+    name : `Alya Putri`,
+    GPA : 3.89,
+    familyIncome : 6000000,
+    competitionCount : 4,
+    hasDisciplinaryRecord : false,
+    isDocumentComplete : false
+}
+
+let isReceive : boolean = 
+student.GPA >= 3.75 &&
+student.competitionCount >= 3 &&
+student.hasDisciplinaryRecord === false &&
+student.isDocumentComplete === true; 
+
+let scholarshipAmount: number = isReceive 
+    ? (student.familyIncome < 5000000 ? 12000000 : 6000000) : 0;
+
+const scholarshipBudget : number = 500000000;
+let remainingBudget : number = scholarshipBudget - scholarshipAmount;
+
+console.log(`Student Name      : ${student.name}`);
+console.log(`Is Accepted       : ${isReceive}`);
+console.log(`Scholarship Award : Rp${scholarshipAmount}`);
+console.log(`Remaining Budget  : Rp${remainingBudget}`); 
+
+// family income more than 5 million, scholarship amount half
+// but if documentcompleted false, it shouldn't get scolarship
+
+

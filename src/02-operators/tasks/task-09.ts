@@ -34,3 +34,60 @@
  * - Free shipping eligibility
 
  */
+
+
+const listPurchases : {product : string, price : number, quantity : number}[] = [
+    {product : `Mechanical Keyboard`, price : 850000, quantity : 1},
+    {product : `Wireless Mouse`, price : 275000, quantity : 2},
+    {product : `Monitor Stand`, price : 420000, quantity : 1}
+]
+
+type customerInfo = {
+    voucherValue : number
+    isPremium : boolean
+    rewardPointRate : number
+}
+
+let customer1 : customerInfo = {
+    voucherValue : 100000,
+    isPremium : true,
+    rewardPointRate : 1
+}
+
+//SUBTOTAL
+let subtotal : number = 
+(listPurchases[0].price * listPurchases[0].quantity) +
+(listPurchases[1].price * listPurchases[1].quantity) +
+(listPurchases[2].price * listPurchases[2].quantity);
+
+//MEMBERSHIP DISCOUNT
+let premiumDiscountAmount : number = customer1.isPremium ? 0.1 : 0;
+let discountedSubtotal : number = subtotal * (1 - premiumDiscountAmount);
+
+//VOUCHER DEDUCTION
+let voucherDeductionAmount : number = customer1.voucherValue
+
+//PAYMENT BEFORE TAX
+let finalPaymentBeforeTax : number = discountedSubtotal - voucherDeductionAmount;
+
+//TAX
+let TaxAmount : number = finalPaymentBeforeTax * 0.11;
+
+//FINAL PAYMENT
+let finalPayment : number = finalPaymentBeforeTax + TaxAmount;
+
+//REWARD POINTS
+let rewardPoint : number = (finalPaymentBeforeTax / 50000) * customer1.rewardPointRate;
+
+//FREE SHIPPING ELIGIBILITY
+let isFreeShiping : boolean =
+customer1.isPremium || finalPaymentBeforeTax > 1500000;
+
+console.log(`Product Subtotal : Rp${subtotal}`);
+console.log(`Membership Discount :  ${premiumDiscountAmount}`);
+console.log(`Voucher Deduction : Rp${voucherDeductionAmount}`);
+console.log(`Payment Before Tax : Rp${finalPaymentBeforeTax}`);
+console.log(`VAT (11%) : Rp${TaxAmount}`);
+console.log(`Final Payment : Rp${finalPayment}`);
+console.log(`Reward Points Earned : ${rewardPoint} Points`);
+console.log(`Is Eligible Free Shipping? : ${isFreeShiping}`);

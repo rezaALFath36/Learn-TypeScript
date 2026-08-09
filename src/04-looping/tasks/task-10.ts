@@ -25,3 +25,35 @@ const submissions = [
     { student: "Gita", submitted: true, score: 90 },
     { student: "Hana", submitted: true, score: 73 }
 ];
+
+let submittedCount : number = 0;
+let notSubmittedCount : number = 0;
+let passedCount : number = 0;
+let revisionCount : number = 0;
+let totalScore : number = 0;
+
+for (let i = 0; i < submissions.length; i++) {
+    totalScore += submissions[i].score;
+
+    if (submissions[i].submitted) {
+        submittedCount++;
+
+        if (submissions[i].score >= 75) {
+            passedCount++;
+        } else {
+            revisionCount++;
+            console.log(`Harus Revisi : ${submissions[i].student} (Nilai: ${submissions[i].score})`);
+        }
+    } else {
+        notSubmittedCount++;
+        console.log(`Tidak Mengumpulkan : ${submissions[i].student}`);
+    }
+}
+
+let averageScore : number = totalScore / submissions.length;
+
+console.log(`Siswa Mengumpulkan   : ${submittedCount}`);
+console.log(`Siswa Tidak Kumpul   : ${notSubmittedCount}`);
+console.log(`Siswa Lulus          : ${passedCount}`);
+console.log(`Siswa Harus Revisi   : ${revisionCount}`);
+console.log(`Rata-rata Kelas      : ${averageScore}`);

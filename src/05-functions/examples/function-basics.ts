@@ -1,7 +1,7 @@
 /**
  * Module 05: Functions — Examples
  *
- * Run: npm run example src/05-functions/examples/function-basics.ts
+ * Run: `npm run example src/05-functions/examples/function-basics.ts`
  */
 
 // Function declaration

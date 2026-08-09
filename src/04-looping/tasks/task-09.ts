@@ -26,3 +26,44 @@ const students = [
     { name: "Gita", score: 92 },
     { name: "Hana", score: 67 }
 ];
+
+let aStudents : number = 0;
+let bStudents : number = 0;
+let cStudents : number = 0;
+let dStudents : number = 0;
+let minum : number = students[0].score
+let max : number = students[0].score
+let totalScore : number = 0;
+
+for(let i = 0; i < students.length; i++){
+    if(students[i].score >= 90){
+        aStudents++
+    }
+    else if(students[i].score >= 80){
+        bStudents++
+    }
+    else if(students[i].score >= 70){
+        cStudents++
+    }
+    else{
+        dStudents++
+    }
+
+    if(minum > students[i].score){
+        minum = students[i].score
+    }
+    if(max < students[i].score){
+        max = students[i].score
+    }
+    totalScore += students[i].score
+}
+
+let averageScore : number = totalScore / students.length
+
+console.log(`- Grade A Students : ${aStudents}`);
+console.log(`- Grade B Students : ${bStudents}`);
+console.log(`- Grade C Students : ${cStudents}`);
+console.log(`- Grade D Students : ${dStudents}`);
+console.log(`- Highest Score    : ${max}`);
+console.log(`- Lowest Score     : ${minum}`);
+console.log(`- Average Score    : ${averageScore}`);

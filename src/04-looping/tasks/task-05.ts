@@ -24,3 +24,45 @@ const scores = [
     67, 79, 94, 83, 71,
     96, 65, 87, 74, 90
 ];
+
+let totalScore = 0;
+let goldWinners : number = 0;
+let silverWinners : number = 0;
+let bronzeWinners : number = 0;
+let withoutMedals : number = 0;
+let averageScore : number = 0;
+let maxScore : number = scores[0]
+let highestScore : number = 0;
+
+for(let i = 0; i < scores.length; i++){
+    totalScore += scores[i]
+    
+    if(scores[i] >= 95){
+        goldWinners++
+    }
+    else if(scores[i] >= 85){
+        silverWinners++
+    }
+    else if(scores[i] >= 75){
+        bronzeWinners++
+    }
+    else{
+        withoutMedals++
+    }
+
+    //HIGHEST SCORE
+    if(scores[i] > maxScore){
+        highestScore = scores[i]
+    }
+}
+
+averageScore = totalScore / scores.length
+
+console.log(`- Gold Medal winners   : ${goldWinners}`);
+console.log(`- Silver Medal winners : ${silverWinners}`);
+console.log(`- Bronze Medal winners : ${bronzeWinners}`);
+console.log(`- Without Medals       : ${withoutMedals}`);
+console.log(`- Average Score        : ${averageScore}`);
+console.log(`- Highest Score Winners: ${highestScore}`)
+
+//looking for highest score

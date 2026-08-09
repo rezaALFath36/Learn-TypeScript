@@ -20,3 +20,28 @@ const attendances = [
     { name: "Dimas", present: true },
     { name: "Eka", present: false }
 ];
+
+
+function printAttendanceReport(list: typeof attendances): void{
+
+let totalPresent : number = 0;
+let totalAbsent : number = 0;
+let absentNames : string[] = [];
+let absentIndex : number = 0;
+
+    for(let i = 0; i < list.length; i++){
+        if(list[i].present){
+            totalPresent++
+        }
+        else{
+            totalAbsent++
+            absentNames[absentIndex] = list[i].name
+            absentIndex++
+        }
+    }
+    console.log(`Total Present : ${totalPresent}`)
+    console.log(`Total Absent : ${totalAbsent}`)
+    console.log(`Names of absent student : ${absentNames}`)
+}
+
+printAttendanceReport(attendances)

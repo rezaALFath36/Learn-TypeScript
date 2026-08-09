@@ -6,15 +6,15 @@
  * 82, 75, 91, 64, 88, 73, 95, 80, 69, 77, 84, 92, 58, 79, 86, 71, 90, 67, 83, 76
  * ]
  * ---------------------------------------
- * 
+ *
  * Business Rules
  * - Passing score is 75.
  * - Count how many students passed.
  * - Count how many students failed.
  * - Calculate the total score.
  * - Calculate the average score.
- * 
- * Tasks: 
+ *
+ * Tasks:
  * 1. Iterate through every score using a loop.
  * 2. Use conditional statements to determine pass/fail.
  * 3. Calculate:
@@ -23,3 +23,31 @@
  * - Number of passing students
  * - Number of failing students
  */
+
+const scores: number[] = [
+  82, 75, 91, 64, 88, 73, 95, 80, 69, 77, 84, 92, 58, 79, 86, 71, 90, 67, 83,
+  76,
+];
+
+let passingStundets : number = 0;
+let failingStundents : number = 0;
+let totalScore : number = 0;
+
+for(const score of scores) {
+  console.log(score);
+
+  if (score >= 75) {
+    passingStundets++
+    }
+    else {
+    failingStundents++
+    }
+    totalScore += score
+}
+
+let averageScore : number = totalScore / scores.length
+
+console.log(`Score list : ${scores}`)
+console.log(`Average score : ${averageScore}`)
+console.log(`Number of passing students : ${passingStundets}`)
+console.log(`Number of failing students : ${failingStundents}`)
